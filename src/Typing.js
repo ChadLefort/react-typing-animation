@@ -12,7 +12,6 @@ import Backspace from './Backspace';
 import Reset from './Reset';
 import Delay from './Delay';
 import Speed from './Speed';
-import Cursor from './Cursor';
 
 class Typing extends Component {
   state = {
@@ -44,9 +43,9 @@ class Typing extends Component {
     this.hasMounted = false;
   }
 
-  updateState = async state => {
+  updateState = async (state) => {
     if (this.hasMounted) {
-      return new Promise(resolve => {
+      return new Promise((resolve) => {
         this.setState(state, resolve);
       });
     }
@@ -109,7 +108,7 @@ class Typing extends Component {
   };
 
   animateNextStep = async () =>
-    new Promise(resolve => {
+    new Promise((resolve) => {
       setTimeout(async () => {
         const { cursor, toType } = this.state;
 
@@ -128,7 +127,7 @@ class Typing extends Component {
     });
 
   typeCharacter = async () =>
-    new Promise(async resolve => {
+    new Promise(async (resolve) => {
       const toType = [...this.state.toType];
       const text = [...this.state.text];
       const cursor = { ...this.state.cursor };
@@ -152,7 +151,7 @@ class Typing extends Component {
     });
 
   erase = async () =>
-    new Promise(async resolve => {
+    new Promise(async (resolve) => {
       const text = [...this.state.text];
       const cursor = { ...this.state.cursor };
 
@@ -194,10 +193,10 @@ class Typing extends Component {
     });
 
   render() {
-    const { children, className, cursorClassName, hideCursor } = this.props;
+    const { children, className, hideCursor } = this.props;
     const { isFinished, text } = this.state;
 
-    const cursor = this.props.cursor || <Cursor className={cursorClassName} />;
+    const cursor = this.props.cursor;
 
     const filled = replaceTreeText(
       children,
@@ -213,8 +212,7 @@ class Typing extends Component {
 Typing.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
-  cursor: PropTypes.node,
-  cursorClassName: PropTypes.string,
+  cursor: PropTypes.node.isRequired,
   speed: PropTypes.number,
   startDelay: PropTypes.number,
   loop: PropTypes.bool,
@@ -226,7 +224,6 @@ Typing.propTypes = {
 
 Typing.defaultProps = {
   className: '',
-  cursorClassName: '',
   speed: 50,
   startDelay: 0,
   loop: false,
@@ -240,6 +237,5 @@ Typing.Backspace = Backspace;
 Typing.Reset = Reset;
 Typing.Delay = Delay;
 Typing.Speed = Speed;
-Typing.Cursor = Cursor;
 
 export default Typing;
