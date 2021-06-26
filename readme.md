@@ -63,20 +63,20 @@ const AnimatedTypingComponent = () => (
 
 ## Documentation
 
-|     Property     |    Type    |                                            Default                                             | Required |
-| :--------------: | :--------: | :--------------------------------------------------------------------------------------------: | :------: |
-|     children     | React node |                                                                                                |   yes    |
-|    className     |   string   |                                                                                                |    no    |
-|    cursorClassName     |   string   |                                                                                                |    no    |
-|      cursor      | React node | [`<Cursor />`](https://github.com/adamjking3/react-typing-animation/blob/master/src/Cursor.js) |    no    |
-|      hideCursor      |  boolean   |                                             false                                              |    no    |
-|      speed       |   number   |                                            50 (ms)                                             |    no    |
-|    startDelay    |   number   |                                             0 (ms)                                             |    no    |
-|       loop       |  boolean   |                                             false                                              |    no    |
-| onStartedTyping |  function  |                                            () => {}                                            |    no    |
-| onBeforeType |  function  |                                            () => {}                                            |    no    |
-| onAfterType |  function  |                                            () => {}                                            |    no    |
-| onFinishedTyping |  function  |                                            () => {}                                            |    no    |
+|     Property     |    Type    | Default  | Required |
+| :--------------: | :--------: | :------: | :------: |
+|     children     | React node |          |   yes    |
+|    className     |   string   |          |    no    |
+| cursorClassName  |   string   |          |    no    |
+|      cursor      | React node |          |   yes    |
+|    hideCursor    |  boolean   |  false   |    no    |
+|      speed       |   number   | 50 (ms)  |    no    |
+|    startDelay    |   number   |  0 (ms)  |    no    |
+|       loop       |  boolean   |  false   |    no    |
+| onStartedTyping  |  function  | () => {} |    no    |
+|   onBeforeType   |  function  | () => {} |    no    |
+|   onAfterType    |  function  | () => {} |    no    |
+| onFinishedTyping |  function  | () => {} |    no    |
 
 ### Backspace Component
 
